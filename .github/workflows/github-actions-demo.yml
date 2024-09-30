@@ -12,13 +12,14 @@ on:
       environment:
         description: 'Environment to deploy to'
         type: environment
-        required: true  Test:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch'
-    needs: Build
-    environment: Test
-    steps:
-      - run: echo "🧪 Testing..."
+        required: true  
+    Test:
+      runs-on: ubuntu-latest
+      if: github.event_name == 'workflow_dispatch'
+      needs: Build
+      environment: Test
+      steps:
+        - run: echo "🧪 Testing..."
 
   Load-Test:
     runs-on: ubuntu-latest
